@@ -32,7 +32,9 @@ public class OtpService {
                 .set(
                         "otp:" + phone,
                         otp,
-                        Duration.ofMinutes(1)
+                        Duration.ofMinutes(
+                                10 + random.nextInt(5)
+                        )
                 );
 
         return otp;

@@ -27,9 +27,45 @@ public class RedisConfig {
                 new StringRedisSerializer()
         );
 
-        template.setValueSerializer(
+        template.setDefaultSerializer(
                 new GenericJackson2JsonRedisSerializer()
         );
+
+
+//        template.setValueSerializer(
+//                new GenericJackson2JsonRedisSerializer()
+//        );
+
+
+
+
+        //  for newer version of java genericjackson2jsonredisserialiser() dont work(written just above)
+
+//        JacksonJsonRedisSerializer<Object> serializer =
+//                new JacksonJsonRedisSerializer<>(
+//                        Object.class
+//                );
+//
+//        template.setValueSerializer(
+//                serializer
+//        );
+
+
+
+        //---------------------------------
+//
+//        template.setHashKeySerializer(
+//                new StringRedisSerializer()
+//        );
+//
+//        template.setHashValueSerializer(
+//                serializer
+//        );
+//-------------------or
+//        template.setDefaultSerializer(
+//                serializer
+//        );
+
 
 
         //-------------temporarily because above Serializer is not supporting thats why storing in string
