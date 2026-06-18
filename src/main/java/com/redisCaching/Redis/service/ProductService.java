@@ -1,6 +1,8 @@
-package com.redisCaching.Redis;
+package com.redisCaching.Redis.service;
 
+import com.redisCaching.Redis.modal.Product;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -29,9 +31,12 @@ public class ProductService {
     //----------------------get product----------------
 
 
+
     public Product getProduct(
             Long id
     ){
+
+
 
         return (Product)
                 redisTemplate
@@ -51,5 +56,22 @@ public class ProductService {
                 "product:" + id
         );
     }
+
+
+    //--------example when we have db and repo
+
+//    @Cacheable("products")
+//    public Product getProduct(
+//            Long id
+//    ){
+//
+//        System.out.println(
+//                "Fetching from DB..."
+//        );
+//
+//        return repository
+//                .findById(id)
+//                .orElseThrow();
+//    }
 
 }

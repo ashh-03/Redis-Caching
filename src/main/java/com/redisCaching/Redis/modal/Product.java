@@ -1,4 +1,4 @@
-package com.redisCaching.Redis;
+package com.redisCaching.Redis.modal;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
